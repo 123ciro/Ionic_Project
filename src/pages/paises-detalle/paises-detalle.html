@@ -1,0 +1,56 @@
+<!--
+  Generated template for the PaisesDetallePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <ion-title>Detalle</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+  <ion-toolbar no-border-top>
+    <ion-segment [(ngModel)]="paises">
+      <ion-segment-button value="Geografia">
+        Geografia
+      </ion-segment-button>
+      <ion-segment-button value="Otros">
+        Otros
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+  <div [ngSwitch]="paises">
+    <ion-list *ngSwitchCase="'Geografia'">
+      <ion-item>
+        <h2>
+          Poblacion : {{pais.population}}
+        </h2>
+      </ion-item>
+      <ion-item>
+        <h2>Region : {{pais.region}}
+        </h2>
+      </ion-item>
+      <ion-item>
+        <h2>SubRegion : {{pais.subregion}}</h2>
+      </ion-item>
+    </ion-list>
+    <ion-list *ngSwitchCase="'Otros'">
+      <ion-item>
+        <h2>Dominio : {{pais.dominio}}</h2>
+      </ion-item>
+      <ion-item>
+        <h2>Codigo Numerico : {{pais.codigonumerico}}</h2>
+      </ion-item>
+      <ion-item>
+        <h2>Moneda : {{pais.moneda}}</h2>
+      </ion-item>
+      <ion-item>
+        <h2>Codigo de Llamada : {{pais.codigollamada}}</h2>
+      </ion-item>
+      <ion-item>
+        <h2>Lenguas: {{pais.lenguaje}} </h2>
+      </ion-item>
+    </ion-list>
+  </div>
+</ion-content>
