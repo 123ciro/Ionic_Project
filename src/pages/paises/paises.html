@@ -1,12 +1,14 @@
 <ion-header>
   <ion-navbar>
-      <ion-searchbar placeholder="Pais" ></ion-searchbar>
+    <ion-searchbar [(ngModel)]="term" (ionInput)="buscar()" debounce="100" ></ion-searchbar>
       <button ion-button menuToggle>
           <ion-icon name="menu"></ion-icon>
         </button>
   </ion-navbar>
 </ion-header>
 <ion-content padding>
+  
+  
 <ion-list>
 <button ion-item *ngFor="let pais of _paises.paises$ | async" (click)="openDetalle(pais)">
   <ion-avatar item-start>

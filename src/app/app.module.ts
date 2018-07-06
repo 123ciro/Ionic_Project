@@ -9,6 +9,10 @@ import { ListPage } from '../pages/list/list';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import {NgxModelModule} from 'ngx-model';
+import { RestApiService } from '../services/rest-api.service';
+import { PaisesService } from '../services/paises/paises.service';
+import { HttpClientModule } from '@angular/common/http';
+
 
 @NgModule({
   declarations: [
@@ -19,7 +23,8 @@ import {NgxModelModule} from 'ngx-model';
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
-    NgxModelModule
+    NgxModelModule,
+    HttpClientModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -30,7 +35,10 @@ import {NgxModelModule} from 'ngx-model';
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    RestApiService,
+    PaisesService
+    
   ]
 })
 export class AppModule {}

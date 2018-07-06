@@ -10,7 +10,7 @@ import { PaisesService } from '../../services/paises/paises.service';
 })
 export class PaisesPage {
 
-
+term: string ="";
 
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
@@ -25,7 +25,10 @@ export class PaisesPage {
     this.navCtrl.push('PaisesDetallePage', pais);
   }
 
+buscar(){
 
+  this._paises.buscar(this.term);
+}
 
 
 }

@@ -5,11 +5,11 @@ export class Paises{
     flag: String="";
     subregion: String = "" ;
     population: Number  =0;
-    dominio:String="";
-    codigonumerico:String="";
-    moneda: String ="";
-    codigollamada :String="";
-    lenguaje:String="";
+    topLevelDomain:String="";
+    callingCodes:String="";
+    currencies: any[] =[];
+    numericCode :String="";
+    languages:any[]=[];
 
 
     

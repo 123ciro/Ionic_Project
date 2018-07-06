@@ -11,7 +11,7 @@
 </ion-header>
 <ion-content padding>
   <ion-toolbar no-border-top>
-    <ion-segment [(ngModel)]="paises">
+    <ion-segment [(ngModel)]="paises" class="bar bar-header bar-calm">
       <ion-segment-button value="Geografia">
         Geografia
       </ion-segment-button>
@@ -19,6 +19,7 @@
         Otros
       </ion-segment-button>
     </ion-segment>
+    
   </ion-toolbar>
   <div [ngSwitch]="paises">
     <ion-list *ngSwitchCase="'Geografia'">
@@ -37,19 +38,19 @@
     </ion-list>
     <ion-list *ngSwitchCase="'Otros'">
       <ion-item>
-        <h2>Dominio : {{pais.dominio}}</h2>
+        <h2>Dominio : {{pais.topLevelDomain}}</h2>
       </ion-item>
       <ion-item>
-        <h2>Codigo Numerico : {{pais.codigonumerico}}</h2>
+        <h2>Codigo Numerico : {{pais.numericCode}}</h2>
+      </ion-item>
+      <ion-item *ngFor="let mon of pais.currencies ">
+        <h2 >Moneda : {{mon.name}}</h2>
       </ion-item>
       <ion-item>
-        <h2>Moneda : {{pais.moneda}}</h2>
+        <h2>Codigo de Llamada : {{pais.callingCodes}}</h2>
       </ion-item>
-      <ion-item>
-        <h2>Codigo de Llamada : {{pais.codigollamada}}</h2>
-      </ion-item>
-      <ion-item>
-        <h2>Lenguas: {{pais.lenguaje}} </h2>
+      <ion-item   >
+        <h2>Lenguas:</h2>  <h2 *ngFor="let len of pais.languages "> {{len.name}} </h2>  
       </ion-item>
     </ion-list>
   </div>
