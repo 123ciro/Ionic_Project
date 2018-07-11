@@ -4,7 +4,7 @@ import { HttpClient } from '@angular/common/http';
 @Injectable()
 export class RestApiService {
     constructor(public http: HttpClient) {
-        111
+
     }
     getObservable(url: string, link: string, obj) {
         let timeout = obj.timeout || 5000;
@@ -33,4 +33,10 @@ export class RestApiService {
                 return obj;
             })
     }
+
+
+//agregar datos
+
+
+
 }

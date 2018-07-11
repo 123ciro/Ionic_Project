@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+
 import { Observable } from 'rxjs';
 import { Paises } from '../../models/paises';
 import { Model, ModelFactory } from 'ngx-model';
@@ -22,10 +22,13 @@ export class PaisesService {
     get() {
         this.rest.getObservable('https://restcountries.eu/rest/v2', 'all', {
             timeout: 3000,
-            objeto: new Paises()
+            objeto: new Paises(),
+
+
         })
             .subscribe((data) => {
                 this.paises = data;
+
                 this.model.set(data);
             })
 

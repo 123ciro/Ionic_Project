@@ -1,0 +1,63 @@
+<!--
+  Generated template for the ClientesDetallePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Detalle Cliente</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <ion-toolbar no-border-top>
+    <ion-segment [(ngModel)]="clientes" class="bar bar-header bar-calm">
+      <ion-segment-button value="Personal">
+        Personal
+      </ion-segment-button>
+      <ion-segment-button value="Laboral">
+        Laboral
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+
+
+  <div [ngSwitch]="clientes">
+    <ion-list *ngSwitchCase="'Personal'">
+
+      <ion-item>
+        <h2> Usuario: {{cliente.username}} </h2>
+      </ion-item>
+
+      <ion-item>
+        <h2> Email: {{cliente.email}} </h2>
+      </ion-item>
+
+      <ion-item>
+        <h2> Ciudad: {{cliente.address.city}} </h2>
+      </ion-item>
+
+
+      <ion-item>
+        <h2> Calle: {{cliente.address.street}} </h2>
+      </ion-item>
+
+    </ion-list>
+    <ion-list *ngSwitchCase="'Laboral'">
+      <ion-item>
+        <h2> Nombre: {{cliente.company.name}} </h2>
+      </ion-item>
+      <ion-item>
+        <h2> Especialidad: {{cliente.company.catchPhrase}} </h2>
+      </ion-item>
+      <ion-item>
+        <h2> Estrategias: {{cliente.company.bs}} </h2>
+      </ion-item>
+    </ion-list>
+  </div>
+</ion-content>
