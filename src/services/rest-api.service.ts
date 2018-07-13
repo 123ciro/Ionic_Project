@@ -3,6 +3,8 @@ import { HttpClient } from '@angular/common/http';
 
 @Injectable()
 export class RestApiService {
+
+
     constructor(public http: HttpClient) {
 
     }
@@ -10,7 +12,7 @@ export class RestApiService {
         let timeout = obj.timeout || 5000;
         let objeto = obj.objeto || {};
 
-        return this.http.get(url + '/' + link)
+        return this.http.get(url + '/' + link )
             .timeout(timeout)
             .map((data: any) => this.mapData(data, objeto))
             .catch((error) => {

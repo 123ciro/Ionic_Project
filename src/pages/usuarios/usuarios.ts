@@ -16,6 +16,7 @@ import { UsuariosService } from '../../services/usuarios/usuarios.service';
 })
 export class UsuariosPage {
   term: string ="";
+
   constructor(public navCtrl: NavController, public navParams: NavParams,
   public _usuarios:UsuariosService) {
     this._usuarios.get();
@@ -29,4 +30,13 @@ export class UsuariosPage {
 
     this._usuarios.buscar(this.term);
   }
+
+  openDetalle(usu){
+    this.navCtrl.push('UsuariosDetallesPage', usu);
+  }
+
+
+
+
+
 }

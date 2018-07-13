@@ -4,6 +4,7 @@
       <button ion-button menuToggle>
           <ion-icon name="menu"></ion-icon>
         </button>
+
   </ion-navbar>
 </ion-header>
 <ion-content padding color="primary">
@@ -18,4 +19,9 @@
   <button ion-button clear item-end>Ver</button>
 </button>
 </ion-list>
+
+
+<ion-infinite-scroll (ionInfinite)="doInfinite($event)" *ngIf="page < totalPage">
+  <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="Loading more data..."></ion-infinite-scroll-content>
+</ion-infinite-scroll>
 </ion-content>

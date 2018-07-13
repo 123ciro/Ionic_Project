@@ -12,13 +12,16 @@ export class PaisesPage {
 
 term: string ="";
 
+
+
+
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
-              public _paises: PaisesService) 
- 
+              public _paises: PaisesService)
+
   {
        this._paises.get();
-       
+
   }
 
   openDetalle(pais){
@@ -29,6 +32,7 @@ buscar(){
 
   this._paises.buscar(this.term);
 }
+
 
 
 }
