@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
+
 @Injectable()
 export class RestApiService {
 
@@ -39,6 +40,20 @@ export class RestApiService {
 
 //agregar datos
 
+// public createProduct(usu: Usuarios) {
+// }
+
+
+// public createProduct(url: string, link: string, usu: Usuarios) {
+//   return this.http
+//     .post(url + link , usu)
+//     .map(response => {
+//       return new Usuarios(response);
+//     })
+//     .catch((error)=>{
+//         console.error(error);
+//     });
+// }
 
 
 }

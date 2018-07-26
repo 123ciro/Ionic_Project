@@ -1,23 +1,28 @@
 <ion-header>
   <ion-navbar color="primary">
-    <ion-searchbar [(ngModel)]="term" (ionInput)="buscar()" debounce="100" ></ion-searchbar>
-      <button ion-button menuToggle>
-          <ion-icon name="menu"></ion-icon>
-        </button>
+    <ion-searchbar [(ngModel)]="term" (ionInput)="buscar()" debounce="100"></ion-searchbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
   </ion-navbar>
 </ion-header>
 <ion-content padding color="primary">
 
 
-<ion-list>
-<button ion-item *ngFor="let usu of _usuarios.usuarios$ | async" (click)="openDetalle(usu)">
-  <ion-avatar item-start>
-    <img src="{{usu.fotoperfil}}">
-  </ion-avatar>
+  <ion-list>
+    <button ion-item *ngFor="let usu of _usuarios.usuarios$ | async" (click)="openDetalle(usu)">
+      <ion-avatar item-start>
+        <img src="{{usu.fotoperfil}}">
+      </ion-avatar>
 
-  <h3> Nombre: {{usu.nombre}} </h3>
-  <p> Correo:{{usu.correo}}</p>
-  <button ion-button clear item-end>Detalle</button>
-</button>
-</ion-list>
+      <h3> Nombre: {{usu.nombre | titlecase}} </h3>
+      <p> Correo:{{usu.correo}}</p>
+      <p> {{usu.cantidadamigos}} </p>
+      <p> Vendedor : {{usu.vendedor ? 'Si': 'No'}} </p>
+      <p> Comprador : {{usu.comprador ? 'Si' : 'No'}} </p>
+      <p> Salario: {{usu.salario | currency:'Gs':true:'1.2-4' }} </p>
+
+      <button ion-button clear item-end>Detalle</button>
+    </button>
+  </ion-list>
 </ion-content>

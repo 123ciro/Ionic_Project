@@ -5,6 +5,7 @@ import { Usuarios } from '../../models/usuarios';
 import { Model, ModelFactory } from 'ngx-model';
 import { RestApiService } from '../rest-api.service';
 
+
 @Injectable()
 export class UsuariosService {
 
@@ -43,9 +44,17 @@ export class UsuariosService {
     this.model.set(temp);
   }
 
+  // Sending a POST request to /products
 
 
-z
+//  post(){
+
+//   this.rest.createProduct('http://localhost:3000', 'usuarios',{
+
+
+//   })
+//  }
+
 }
 
 

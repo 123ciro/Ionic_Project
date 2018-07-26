@@ -14,6 +14,10 @@ import { PaisesService } from '../services/paises/paises.service';
 import { HttpClientModule } from '@angular/common/http';
 import {ClienteService} from '../services/clientes/clientes.service';
 import {UsuariosService} from '../services/usuarios/usuarios.service';
+import { Network } from '@ionic-native/network';
+import { Calendar } from '@ionic-native/calendar';
+import { AppMinimize } from '@ionic-native/app-minimize';
+import { BarcodeScanner } from '@ionic-native/barcode-scanner';
 
 
 @NgModule({
@@ -42,7 +46,11 @@ import {UsuariosService} from '../services/usuarios/usuarios.service';
     RestApiService,
     PaisesService,
     ClienteService,
-    UsuariosService
+    UsuariosService,
+    Network,
+    Calendar,
+    AppMinimize,
+    BarcodeScanner
 
   ]
 })

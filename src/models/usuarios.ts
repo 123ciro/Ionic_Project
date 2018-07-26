@@ -22,7 +22,9 @@ export class Usuarios {
   estadocivil: String ="";
   universidad: String ="";
   carrera :String ="";
-
+  vendedor: boolean=false ;
+  comprador:boolean=false ;
+  salario: number=0
 
 
 }
