@@ -14,16 +14,18 @@ import { PaisesService } from '../services/paises/paises.service';
 import { HttpClientModule } from '@angular/common/http';
 import {ClienteService} from '../services/clientes/clientes.service';
 import {UsuariosService} from '../services/usuarios/usuarios.service';
+
 import { Network } from '@ionic-native/network';
 import { Calendar } from '@ionic-native/calendar';
 import { AppMinimize } from '@ionic-native/app-minimize';
 import { BarcodeScanner } from '@ionic-native/barcode-scanner';
-
+import { FormUsuarioPage } from '../pages/form-usuario/form-usuario'
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
+    FormUsuarioPage,
 
 
   ],
@@ -37,6 +39,7 @@ import { BarcodeScanner } from '@ionic-native/barcode-scanner';
   entryComponents: [
     MyApp,
     HomePage,
+    FormUsuarioPage,
 
   ],
   providers: [
@@ -47,6 +50,7 @@ import { BarcodeScanner } from '@ionic-native/barcode-scanner';
     PaisesService,
     ClienteService,
     UsuariosService,
+
     Network,
     Calendar,
     AppMinimize,

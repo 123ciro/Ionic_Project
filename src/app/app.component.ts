@@ -29,7 +29,8 @@ export class MyApp {
       { title: 'Paises', component: 'PaisesPage', icon: 'basketball' },
       { title: 'Clientes', component: 'ClientesPage', icon: 'person' },
       { title: 'Usuarios', component: 'UsuariosPage', icon: 'person' },
-      { title: 'Scan', component: 'ScanPage', icon: 'barcode' }
+      { title: 'Scan', component: 'ScanPage', icon: 'barcode' },
+
     ];
     this.conexion();
     this.calendario();

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient,HttpHeaders } from '@angular/common/http';
 
 
 @Injectable()
@@ -36,24 +36,18 @@ export class RestApiService {
                 return obj;
             })
     }
+    getHeaders() {
+      let httpOptions = { //Se crea un encabezado http\
+        headers: new HttpHeaders({ //Parametros
+          'token': localStorage.getItem('token') || ''
+        })
+      };
+      return httpOptions;
+  }
 
 
-//agregar datos
-
-// public createProduct(usu: Usuarios) {
-// }
-
-
-// public createProduct(url: string, link: string, usu: Usuarios) {
-//   return this.http
-//     .post(url + link , usu)
-//     .map(response => {
-//       return new Usuarios(response);
-//     })
-//     .catch((error)=>{
-//         console.error(error);
-//     });
-// }
-
+    post(url: string, link: string, body: any) {
+      return this.http.post(url + '/' + link, body, this.getHeaders()).toPromise();
+    }
 
 }
